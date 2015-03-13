@@ -18,8 +18,12 @@
   },
   "homepage": "http://baconscript.com/tuple",
   "dependencies": {
+    "ampersand-collection": "^1.4.1",
+    "ampersand-state": "^4.4.5",
+    "baconjs": "^0.7.53",
     "browserify-middleware": "^5.0.2",
     "express": "^4.12.2",
-    "less-middleware": "^2.0.1"
+    "less-middleware": "^2.0.1",
+    "three": "^0.70.0"
   }
 }
