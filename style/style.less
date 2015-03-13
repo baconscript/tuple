@@ -1,0 +1,32 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+.addShadow(@counter, @dist, @onColor, @offColor) when (mod(@counter,2) > 0) {
+  text-shadow+: (1.732* @counter * @dist) (-@counter * @dist) @onColor;
+}
+
+.addShadow(@counter, @dist, @onColor, @offColor) when (mod(@counter,2) <= 0) {
+  text-shadow+: (1.732* @counter * @dist) (-@counter * @dist) @offColor;
+}
+
+.loopShadow(@counter, @dist, @onColor, @offColor) when (@counter > 0) {
+  .loopShadow((@counter - 1), @dist, @onColor, @offColor);
+  .addShadow(@counter, @dist, @onColor, @offColor);
+}
+
+h1 {
+  .loopShadow(6, 0.5px, white, #666);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: text-shadow 200ms, color 200ms;
+  cursor: pointer;
+  font-size: 300%;
+  color: black;
+  &:hover {
+    .loopShadow(6, 2px, white, #aaa);
+    color: #333;
+  }
+}
+
+body {
+  font-family: 'Oswald';
+}
