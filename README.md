@@ -1,8 +1,10 @@
-Swap
+Tuple
 =================
-Submission for the 2013 Github Game Jam
+Submission for the 2015 GitHub Game Jam
 
-By [@nmoroze](https://github.com/nmoroze) and [@themichaelyang](https://github.com/themichaelyang)
+By [@baconscript](https://github.com/baconscript)
+
+> Forked from [Swap] submitted for the 2013 GitHub Game Jam by [@nmoroze](https://github.com/nmoroze) and [@themichaelyang](https://github.com/themichaelyang)
 
 About the Game
 -----------------
@@ -10,7 +12,7 @@ Swap is a new take on the classic tile-based puzzle game.
 
 *Change* which character you're controlling to reach your goal -- but be careful, as characters you're not controlling will often have a mind of their own! Progress through a multitude of tricky and challenging levels, and watch as that death count piles up. If you're stuck, you can always hit the 'skip' button to move on, or the 'reset' button to start the level over.
 
-Swap is written in Javascript using the HTML 5 canvas for rendering. It is playable in the browser [here](http://nmoroze.github.io/swap), and is working in Chrome, Safari, Firefox, and Internet Explorer 11. 
+Swap is written in Javascript using the HTML 5 canvas for rendering. It is playable in the browser [here](http://nmoroze.github.io/swap), and is working in Chrome, Safari, Firefox, and Internet Explorer 11.
 
 Enjoy!
 
@@ -27,7 +29,7 @@ Screenshots
 
 Open Source Projects Used
 -------------------------
-* [Keypress](http://dmauro.github.io/Keypress/) for input. 
+* [Keypress](http://dmauro.github.io/Keypress/) for input.
 * [Font Awesome](http://fontawesome.io/) for icons.
 
 Acknowledgements
