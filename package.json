@@ -24,6 +24,7 @@
     "browserify-middleware": "^5.0.2",
     "express": "^4.12.2",
     "less-middleware": "^2.0.1",
+    "protobufjs": "^4.0.0-b2",
     "three": "^0.70.0"
   }
 }
