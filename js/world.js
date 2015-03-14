@@ -157,8 +157,14 @@ var world = function() {
 	}
 
 	var cyclePlayer = function() {
+    if(player.currentAI) {
+      player.currentAI.mesh.visible = true;
+    }
 		aiEntities.push(player.getAI());		
 		player.setAI(aiEntities.shift());
+    if(player.currentAI) {
+      player.currentAI.mesh.visible = false;
+    }
 	}
 
 	var createDialogue = function(info) {
