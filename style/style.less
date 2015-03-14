@@ -14,19 +14,21 @@
 }
 
 h1 {
-  .loopShadow(6, 1px, white, #666);
+  .loopShadow(6, 1px, black, #aaa);
   text-transform: uppercase;
   letter-spacing: 3px;
   transition: text-shadow 200ms, color 200ms;
   cursor: pointer;
   font-size: 300%;
-  color: black;
+  color: #ddd;
   &:hover {
-    .loopShadow(6, 2px, white, #aaa);
-    color: #333;
+    .loopShadow(6, 2px, black, #444);
+    color: #fff;
   }
 }
 
 body {
   font-family: 'Oswald';
+  background-color: black;
+  color: white;
 }
