@@ -52,7 +52,7 @@ var renderer = function() {
     var light = new THREE.AmbientLight( 0x404040 ); // soft white light
 scene.add( light );
     var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.7 );
-    directionalLight.position.set(3,2,-1);
+    directionalLight.position.set(1,2,-3);
     scene.add( directionalLight );
 
 		for (var y = 0; y < floor.length; y++) {
@@ -68,6 +68,11 @@ scene.add( light );
 
     playerMesh = mkAiMesh(0x0088ff)(player);
     scene.add(player.mesh);
+    if(player.currentAI) {
+      mkAiMesh()(player.currentAI);
+      scene.add(player.currentAI.mesh);
+      player.currentAI.mesh.visible = false;
+    }
 
     if(floor.length && floor[0].length) {
       camera.position.x = floor.length*1.3 + .5;
