@@ -9,7 +9,7 @@ app = express();
 app.set('views', __dirname);
 app.set('view engine', 'jade');
 app.use('/app.js', browserify('./js/app.js'));
-app.use(require('less-middleware')(path.join(__dirname, 'style')));
+app.use(require('less-middleware')(__dirname));
 app.use(express["static"](__dirname));
 
 app.use(function(req, res) {
