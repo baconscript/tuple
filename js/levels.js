@@ -523,4 +523,4 @@ var levels = [
 		],
 		tip: "Swap, by Noah Moroze and Michael Yang. Thanks for playing!",
 	},
-]
+];

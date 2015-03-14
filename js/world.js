@@ -14,12 +14,12 @@ var world = function() {
 
 	var init = function(level, canvasId, hudId, tipId) {
 		renderer.init(canvasId, hudId, tipId);
-		initLevel(level);
+		initLevel(level, aiEntities, floor);
 		createDialogue("Welcome to Swap");
 		prevTime = Date.now();
 	}
 
-	var initLevel = function(level) {
+	var initLevel = function(level, aiEntities, floor) {
 		hasDied = false;
 		hasWon = false;
 		if(intervalId)
@@ -32,7 +32,7 @@ var world = function() {
 			return;
 		}
 
-		renderer.initLevel(levels[level]);
+		renderer.initLevel(levels[level], aiEntities, floor);
 		gridSize = renderer.gridSize;
 
 		player.init(gridSize);
@@ -53,7 +53,7 @@ var world = function() {
 			// initLevel(curLevel+1);
 			curLevel++;
 		}
-		hasWon = true;
+		//hasWon = true;
 	}
 
 	var death = function() {
@@ -79,7 +79,7 @@ var world = function() {
 					floor[y].push(getTile(x*gridSize, y*gridSize, currentLevel.tiles[y][x]));
 				}
 				else {
-					floor[y].push(getTile(0));	
+					floor[y].push(getTile(x, y, currentLevel.tiles[y][x]));	
 					if(x==currentLevel.startX && y==currentLevel.startY)
 						player.setAI(getAI(x*gridSize+gridSize/2, y*gridSize+gridSize/2, currentLevel.tiles[y][x]));
 					else {
@@ -135,12 +135,12 @@ var world = function() {
 		var touching = {
 			tiles: [],
 		}
-		var x = (ai.x - gridSize/2) + 5;
-		var y = (ai.y - gridSize/2) + 5;
-		addToArray(touching.tiles, floor[coordToGrid(x, y).y][coordToGrid(x, y).x]);
-		addToArray(touching.tiles, floor[coordToGrid(x+gridSize-10, y).y][coordToGrid(x+gridSize-10, y).x]);
-		addToArray(touching.tiles, floor[coordToGrid(x, y+gridSize-10).y][coordToGrid(x, y+gridSize-10).x]);
-		addToArray(touching.tiles, floor[coordToGrid(x+gridSize-10, y+gridSize-10).y][coordToGrid(x+gridSize-10, y+gridSize-10).x]);
+		var x = Math.floor(ai.x - gridSize/2);// + 5;
+		var y = Math.floor(ai.y - gridSize/2);// + 5;
+		addToArray(touching.tiles, floor[y][x]);
+		//addToArray(touching.tiles, floor[coordToGrid(x+gridSize-10, y).y][coordToGrid(x+gridSize-10, y).x]);
+		//addToArray(touching.tiles, floor[coordToGrid(x, y+gridSize-10).y][coordToGrid(x, y+gridSize-10).x]);
+		//addToArray(touching.tiles, floor[coordToGrid(x+gridSize-10, y+gridSize-10).y][coordToGrid(x+gridSize-10, y+gridSize-10).x]);
 		return touching;
 	}	
 
@@ -169,12 +169,12 @@ var world = function() {
 	var closeDialogue = function() {
 		input.gameMode();
 		dialogue = "";
-		initLevel(curLevel);
+		initLevel(curLevel, aiEntities, floor);
 	}
 
 	var resetLevel = function() {
 		createDialogue("Level Reset!");
-		initLevel(curLevel);
+		initLevel(curLevel, aiEntities, floor);
 	}
 
 	return {

@@ -6,6 +6,7 @@ var player = function() {
 	var friction = 1.6;
 	var trail = [];
 	var gridSize;
+  var SPEED_LIMIT = 0.08;
 	// var hitRight = false;
 	// var hitLeft = false;
 	// var hitUp = false;
@@ -55,14 +56,14 @@ var player = function() {
         if(!input.up && !input.down) {
         	vy = vy / friction;
         }
-        if(vx>8)
-        	vx=8;
-        else if(vx<-8)
-        	vx=-8;
-        if(vy>8)
-        	vy=8;
-        else if(vy<-8)
-        	vy=-8;
+        if(vx>SPEED_LIMIT)
+        	vx=SPEED_LIMIT;
+        else if(vx<-SPEED_LIMIT)
+        	vx=-SPEED_LIMIT;
+        if(vy>SPEED_LIMIT)
+        	vy=SPEED_LIMIT;
+        else if(vy<-SPEED_LIMIT)
+        	vy=-SPEED_LIMIT;
 		this.x += vx;
 		this.y += vy;
 	}
