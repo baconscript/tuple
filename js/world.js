@@ -32,14 +32,14 @@ var world = function() {
 			return;
 		}
 
-		renderer.initLevel(levels[level], aiEntities, floor);
-		gridSize = renderer.gridSize;
+		gridSize = 1;
 
 		player.init(gridSize);
 		input.gameMode();
 		input.reset();
 				
 		loadLevel(level);
+		renderer.initLevel(levels[level], aiEntities, floor);
 		renderer.renderText(deaths, curLevel, levels[curLevel].tip);
 
 		intervalId = setInterval(run, 1000 / fps);

@@ -130,7 +130,6 @@ var getTile = function(x, y, id) {
 			case 4: 
 				return new PlayerWallTile(x, y);
 			default:
-        if(id !== 0) console.log(x, y, id);
 				return new FloorTile(x, y);
 		}
 	}
