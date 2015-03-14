@@ -1,5 +1,4 @@
 .DS_STORE
 node_modules/
-style/style.css
 .*.sw*
 *.log
