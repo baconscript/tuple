@@ -89,12 +89,14 @@ SwitchTile.prototype.onCollide = function(ai) {
 	anyDown[this.switchingId] = true;
 	switchedTiles[this.switchingId].blocksMovement = false;
 	switchedTiles[this.switchingId].color = 0xffffff;
+  switchedTiles[this.switchingId].mesh.position.z = 0;
 }
 SwitchTile.prototype.update = function() {
 	if(!anyDown[this.switchingId]) {
 		if(!switchedTiles[this.switchingId].touchingAI) {
 			switchedTiles[this.switchingId].blocksMovement = true;
 			switchedTiles[this.switchingId].color = 0x333333;
+      switchedTiles[this.switchingId].mesh.position.z = 0.3;
 		}
 	}
 	anyDown[this.switchingId] = false;

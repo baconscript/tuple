@@ -135,8 +135,8 @@ var world = function() {
 		var touching = {
 			tiles: [],
 		}
-		var x = Math.floor(ai.x - gridSize/2);// + 5;
-		var y = Math.floor(ai.y - gridSize/2);// + 5;
+		var x = Math.floor(ai.x);// + 5;
+		var y = Math.floor(ai.y);// + 5;
 		addToArray(touching.tiles, floor[y][x]);
 		//addToArray(touching.tiles, floor[coordToGrid(x+gridSize-10, y).y][coordToGrid(x+gridSize-10, y).x]);
 		//addToArray(touching.tiles, floor[coordToGrid(x, y+gridSize-10).y][coordToGrid(x, y+gridSize-10).x]);
